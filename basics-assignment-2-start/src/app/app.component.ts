@@ -1,26 +1,28 @@
 import { Component } from '@angular/core';
-
+ 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-  username:string = '';
-  isEmpty:boolean = true;
-
-  resetUsername(event: any){
+ 
+  username = '';
+  allowClearUsername = false;
+ 
+  onClearUsername() {
     this.username = '';
-    this.isEmpty = true;
+    this.allowClearUsername = false;
   }
-
-  onKeypress(event){
-    if(this.username!==''){
-      this.isEmpty = false;
+ 
+  onUpdateUsername(event: Event){
+    console.log(this.username);
+    // this.serverName = (<HTMLInputElement>event.target).value;
+    if (this.username.length > 0) {
+      this.allowClearUsername = true;
     }else{
-      this.isEmpty = true;
+      this.allowClearUsername = false;
     }
   }
-
+ 
 }
