@@ -13,9 +13,6 @@ export class AppComponent {
   displayAndLog(){
     this.isVisible=!this.isVisible;
     this.logarray.push(this.getTimeStamp());
-    if(this.logarray.length==4){
-      this.biggerThan4 = true;
-    }
   }
 
   // Adapted from https://gist.github.com/wanderrful/660b83d459892e304ed2b87285c2d8b6
